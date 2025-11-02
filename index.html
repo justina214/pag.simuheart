@@ -2,93 +2,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SimuHeart</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <h1>SimuHeart</h1>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">SimuHeart</h1>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotras">Nosotras</a></li>
+          <li><a href="#laapp">La App</a></li>
+          <li><a href="#filtros">Buscador</a></li>
+          <li><a href="#chat">Chat</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#nosotras">Nosotras</a></li>
-        <li><a href="#filtros">La App</a></li>
-        <li><a href="#chat">Chat</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="inicio" class="hero">
-      <div class="logo-sello">
-        <img src="img/logo.png" alt="Logo SimuHeart" />
-      </div>
-      <div class="hero-content">
-        <div class="hero-texto">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="logo-sello">
+            <img src="img/logo.png" alt="Logo SimuHeart">
+          </div>
           <h2>Formación médica con tecnología inmersiva</h2>
-          <p>Bazano & Imas Navarro</p>
-          <button>Más información</button>
+          <p>Bazano &amp; Imas Navarro</p>
+          <button type="button" class="btn">Más información</button>
         </div>
-        <div class="hero-imagen">
-          <img src="img/corazon.png" alt="Corazón SimuHeart" />
+        <div class="hero-media">
+          <img src="img/corazon.png" alt="Corazón SimuHeart">
         </div>
       </div>
     </section>
 
-    <section id="nosotras">
-      <h2>Nosotras</h2>
-      <p>Somos Bazano e Imas Navarro, creadoras de SimuHeart.</p>
-    </section>
-
-    <section id="laapp">
-      <h2>La App</h2>
-      <p>Simula sonidos cardíacos, guía a estudiantes en la auscultación médica y ofrece una experiencia interactiva.</p>
-    </section>
-
-    <section id="chat">
-      <h2>Chat Asistente</h2>
-      <div id="chatbox">
-        <div id="chatlog"></div>
-        <input type="text" id="userInput" placeholder="Escribí tu mensaje..." />
-        <button onclick="sendMessage()">Enviar</button>
+    <!-- NOSOTRAS -->
+    <section id="nosotras" class="section">
+      <div class="container">
+        <h2>Nosotras</h2>
+        <p>Somos Bazano e Imas Navarro, creadoras de SimuHeart.</p>
       </div>
     </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Email: hola@simuheart.com</p>
-    </section>
-    <section id="filtros">
-      <h2>Buscador de sonidos cardíacos</h2>
-
-      <label for="filtro-punto">Punto más audible:</label>
-      <select id="filtro-punto">
-        <option value="">Seleccionar</option>
-        <option value="AV">AV</option>
-        <option value="PV">PV</option>
-        <option value="TV">TV</option>
-        <option value="MV">MV</option>
-      </select>
-
-      <label for="filtro-timing">Tipo de soplo sistólico:</label>
-      <select id="filtro-timing">
-        <option value="">Seleccionar</option>
-        <option value="Holosystolic">Holosistólico</option>
-        <option value="Early-systolic">Temprano sistólico</option>
-        <option value="Mid-systolic">Mesosistólico</option>
-      </select>
-      <button onclick="filtrarPacientes()">Buscar</button>
-      <div id="resultado-audio"></div>
+    <!-- LA APP -->
+    <section id="laapp" class="section">
+      <div class="container">
+        <h2>La App</h2>
+        <p>
+          Simula sonidos cardíacos, guía a estudiantes en la auscultación médica
+          y ofrece una experiencia interactiva.
+        </p>
+      </div>
     </section>
 
+    <!-- BUSCADOR -->
+    <section id="filtros" class="section">
+      <div class="container">
+        <h2>Buscador de sonidos cardíacos</h2>
+
+        <form class="filter-grid" onsubmit="event.preventDefault(); filtrarPacientes();">
+          <div class="field">
+            <label for="filtro-punto">Punto más audible</label>
+            <select id="filtro-punto">
+              <option value="">Seleccionar</option>
+              <option value="AV">AV</option>
+              <option value="PV">PV</option>
+              <option value="TV">TV</option>
+              <option value="MV">MV</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filtro-timing">Tipo de soplo sistólico</label>
+            <select id="filtro-timing">
+              <option value="">Seleccionar</option>
+              <option value="Holosystolic">Holosistólico</option>
+              <option value="Early-systolic">Temprano sistólico</option>
+              <option value="Mid-systolic">Mesosistólico</option>
+            </select>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn btn-full">Buscar</button>
+          </div>
+        </form>
+
+        <div id="resultado-audio" class="audio-grid"></div>
+      </div>
+    </section>
+
+    <!-- CHAT (frontend; API deshabilitada) -->
+    <section id="chat" class="section">
+      <div class="container">
+        <h2>Chat Asistente</h2>
+        <div id="chatbox" class="chatbox">
+          <div id="chatlog" class="chatlog"></div>
+          <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Escribí tu mensaje..." />
+            <button type="button" class="btn" onclick="sendMessage()">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p>Email: hola@simuheart.com</p>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2025 SimuHeart</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 SimuHeart</p>
+    </div>
   </footer>
 
   <script src="main.js"></script>
