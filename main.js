@@ -1,28 +1,16 @@
 async function sendMessage() {
   const input = document.getElementById("userInput");
-  const message = input.value.trim();
+  const message = input?.value?.trim();
   if (!message) return;
 
   const chatlog = document.getElementById("chatlog");
-  chatlog.innerHTML += `<div><strong>Vos:</strong> ${message}</div>`;
-  input.value = "";
-
-  try {
-    const response = await fetch("http://localhost:3000/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message })
-    });
-
-    const data = await response.json();
-    chatlog.innerHTML += `<div><strong>SimuBot:</strong> ${data.reply}</div>`;
-  } catch (error) {
-    console.error("❌ Error al contactar el backend:", error);
-    chatlog.innerHTML += `<div><strong>SimuBot:</strong> No pude responder :(</div>`;
+  if (chatlog) {
+    chatlog.innerHTML += `<div><strong>Vos:</strong> ${message}</div>`;
+    chatlog.innerHTML += `<div><strong>SimuBot:</strong> (Chat deshabilitado temporalmente en GitHub Pages)</div>`;
   }
+  if (input) input.value = "";
 }
+
 const pacientes = [
   {
     id: "9979",
