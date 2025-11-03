@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SimuHeart</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <!-- HEADER -->
@@ -17,7 +17,6 @@
           <li><a href="#nosotras">Nosotras</a></li>
           <li><a href="#laapp">La App</a></li>
           <li><a href="#filtros">Buscador</a></li>
-          <li><a href="#chat">Chat</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -51,6 +50,7 @@
     </section>
 
     <!-- LA APP -->
+<!-- LA APP -->
     <section id="laapp" class="section">
       <div class="container">
         <h2>La App</h2>
@@ -58,8 +58,14 @@
           Simula sonidos cardíacos, guía a estudiantes en la auscultación médica
           y ofrece una experiencia interactiva.
         </p>
+
+        <a href="https://raw.githubusercontent.com/justina214/pag.simuheart/main/app-debug.apk" 
+          class="btn btn-full" download>
+          📲 Descargar SimuHeart (APK)
+        </a>
       </div>
     </section>
+
 
     <!-- BUSCADOR -->
     <section id="filtros" class="section">
@@ -97,20 +103,6 @@
       </div>
     </section>
 
-    <!-- CHAT (frontend; API deshabilitada) -->
-    <section id="chat" class="section">
-      <div class="container">
-        <h2>Chat Asistente</h2>
-        <div id="chatbox" class="chatbox">
-          <div id="chatlog" class="chatlog"></div>
-          <div class="chat-input">
-            <input type="text" id="userInput" placeholder="Escribí tu mensaje..." />
-            <button type="button" class="btn" onclick="sendMessage()">Enviar</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACTO -->
     <section id="contacto" class="section">
       <div class="container">
@@ -126,6 +118,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=3"></script>
 </body>
 </html>
