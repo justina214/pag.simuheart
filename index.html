@@ -55,59 +55,35 @@
       <div class="container">
         <h2>La App</h2>
         <p>
-          Simula sonidos cardíacos, guía a estudiantes en la auscultación médica
+          Simula sonidos cardíacos, guía a estudiantes en la auscultación cardíaca
           y ofrece una experiencia interactiva.
         </p>
 
         <a href="https://raw.githubusercontent.com/justina214/pag.simuheart/main/app-debug.apk" 
           class="btn btn-full" download>
-          📲 Descargar SimuHeart (APK)
+          Descargar SimuHeart!
         </a>
       </div>
     </section>
 
-
-    <!-- BUSCADOR -->
-    <section id="filtros" class="section">
+    <!-- PATOLOGÍAS -->
+    <section id="patologias" class="section">
       <div class="container">
-        <h2>Buscador de sonidos cardíacos</h2>
-
-        <form class="filter-grid" onsubmit="event.preventDefault(); filtrarPacientes();">
-          <div class="field">
-            <label for="filtro-punto">Punto más audible</label>
-            <select id="filtro-punto">
-              <option value="">Seleccionar</option>
-              <option value="AV">AV</option>
-              <option value="PV">PV</option>
-              <option value="TV">TV</option>
-              <option value="MV">MV</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="filtro-timing">Tipo de soplo sistólico</label>
-            <select id="filtro-timing">
-              <option value="">Seleccionar</option>
-              <option value="Holosystolic">Holosistólico</option>
-              <option value="Early-systolic">Temprano sistólico</option>
-              <option value="Mid-systolic">Mesosistólico</option>
-            </select>
-          </div>
-
-          <div class="actions">
-            <button type="submit" class="btn btn-full">Buscar</button>
-          </div>
-        </form>
-
-        <div id="resultado-audio" class="audio-grid"></div>
+        <h2>Estas son nuestras patologías</h2>
+        <ul class="patologias-list">
+          <li><a class="btn btn-full" href="patologias/Sano.html">Sano</a></li>
+          <li><a class="btn btn-full" href="patologias/InsuficienciaAortica.html">Insuficiencia Aórtica</a></li>
+          <!-- agregá más ítems con sus IDs -->
+        </ul>
       </div>
     </section>
+
 
     <!-- CONTACTO -->
     <section id="contacto" class="section">
       <div class="container">
         <h2>Contacto</h2>
-        <p>Email: hola@simuheart.com</p>
+        <p>Email: simuheart.team@gmail.com</p>
       </div>
     </section>
   </main>

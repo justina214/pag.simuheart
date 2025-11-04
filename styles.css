@@ -249,3 +249,35 @@ section { scroll-margin-top: 72px; }
 @media (max-width: 480px){
   .chat-input{ flex-direction: column; }
 }
+
+/* Lista de patologías en la home */
+.patologias-list{
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: .75rem;
+}
+.patologias-list .btn{ text-align: center; }
+
+/* Badge para destacar el punto más audible en la página de detalle */
+.badge{
+  font-size:.75rem;
+  padding:.25rem .5rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.2);
+  opacity:.9;
+}
+
+/* Botón “volver/descargar” usado en detalle */
+.back{
+  display:inline-block;
+  margin:.75rem 0 0;
+  text-decoration:none;
+  border:1px solid var(--border);
+  padding:.5rem .8rem;
+  border-radius:10px;
+  color: var(--ink);
+  background: transparent;
+}
+.back:hover{ background: rgba(255,255,255,0.06); }
