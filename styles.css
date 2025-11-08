@@ -251,14 +251,23 @@ section { scroll-margin-top: 72px; }
 }
 
 /* Lista de patologías en la home */
+/* lista de patologías: separar botones */
 .patologias-list{
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 1rem 0 0;
-  display: grid;
-  gap: .75rem;
 }
-.patologias-list .btn{ text-align: center; }
+.patologias-list li{
+  margin-bottom: 12px;   /* separa cada botón */
+}
+.patologias-list li:last-child{
+  margin-bottom: 0;
+}
+
+/* que el botón ocupe todo el ancho del li */
+.patologias-list .btn{
+  display: block;
+}
 
 /* Badge para destacar el punto más audible en la página de detalle */
 .badge{
@@ -281,3 +290,24 @@ section { scroll-margin-top: 72px; }
   background: transparent;
 }
 .back:hover{ background: rgba(255,255,255,0.06); }
+.form-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+textarea{
+  background: #101238;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+  resize: vertical;
+  min-height: 120px;
+}
+.choices{
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback | SimuHeart</title>
+  <link rel="stylesheet" href="styles.css?v=5" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">SimuHeart</h1>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#nosotras">Nosotras</a></li>
+          <li><a href="index.html#laapp">La App</a></li>
+          <li><a href="feedback.html" class="active">Feedback</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="feedback" class="section">
+      <div class="container">
+        <h2>Feedback</h2>
+        <p>Nos interesa mucho tu opinión sobre la experiencia de uso de SimuHeart.</p>
+
+        <form id="feedbackForm" class="form-grid" onsubmit="return enviarFeedback(event)">
+          <div class="field">
+            <label for="comentarios">Comentarios</label>
+            <textarea id="comentarios" rows="5" placeholder="Escribe tu comentario..." required></textarea>
+          </div>
+
+          <div class="field">
+            <label>¿Considera que se escucha bien?</label>
+            <div class="choices">
+              <label><input type="radio" name="escucha_bien" value="Sí" required> Sí</label>
+              <label><input type="radio" name="escucha_bien" value="No"> No</label>
+              <label><input type="radio" name="escucha_bien" value="Regular"> Regular</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email (opcional)</label>
+            <input type="email" id="email" placeholder="tu@mail.com">
+          </div>
+
+          <!-- Honeypot anti-spam -->
+          <input type="text" id="website" name="website" style="display:none">
+
+          <button type="submit" class="btn btn-full">Enviar</button>
+          <p id="feedbackMsg" style="margin-top:10px;"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 SimuHeart</p>
+    </div>
+  </footer>
+
+  <script src="feedback.js?v=5"></script>
+</body>
+</html>
