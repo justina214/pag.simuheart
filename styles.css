@@ -251,23 +251,14 @@ section { scroll-margin-top: 72px; }
 }
 
 /* Lista de patologías en la home */
-/* lista de patologías: separar botones */
 .patologias-list{
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: .75rem;
 }
-.patologias-list li{
-  margin-bottom: 12px;   /* separa cada botón */
-}
-.patologias-list li:last-child{
-  margin-bottom: 0;
-}
-
-/* que el botón ocupe todo el ancho del li */
-.patologias-list .btn{
-  display: block;
-}
+.patologias-list .btn{ text-align: center; }
 
 /* Badge para destacar el punto más audible en la página de detalle */
 .badge{
@@ -310,4 +301,209 @@ textarea{
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+/* --- Acordeón: botón corto y alineado al container --- */
+.simu-accordion{
+  border: none;
+  padding: 0;
+}
+
+.simu-accordion > summary{
+  display: inline-flex;        /* botón corto */
+  width: fit-content;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .6rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1vw + 1rem, 1.35rem);
+  color: #e8ecff;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  /* para separarlo del contenido de arriba */
+  margin-top: -10rem;
+}
+
+.simu-accordion > summary::after{
+  content: "+";
+  font-weight: 800;
+  margin-left: .25rem;
+  opacity: .9;
+  transition: transform .2s ease;
+}
+.simu-accordion[open] > summary::after{ content: "–"; }
+
+.simu-accordion[open] > summary{ margin-bottom: .9rem; }
+
+/* --- Lista de patologías como pills (no links azules) --- */
+.pill-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .75rem;
+}
+
+.pill-list a{
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  padding: .75rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-strong));
+  box-shadow: 0 4px 20px rgba(53,177,255,0.12);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
+}
+.pill-list a:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+.pill-list a:active{ transform: translateY(0); filter: brightness(.97); }
+/* --- PREVIEW del simulador (imagen + texto lado a lado) --- */
+.simuheart-preview{
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 2 columnas iguales */
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;              /* separa del acordeón */
+}
+
+.simuheart-preview-media img{
+  width: 100%;
+  height: auto;
+  max-height: 420px;                /* para que no sea gigantesca */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.simuheart-preview-texto h2{
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.4rem);
+  margin-bottom: 12px;
+}
+
+.simuheart-preview-texto p{
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* móvil: se apila uno debajo del otro */
+@media (max-width: 900px){
+  .simuheart-preview{ grid-template-columns: 1fr; }
+}
+
+/* --- Sección APP: texto izquierda, imagen derecha --- */
+.app-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.app-texto h2{
+  font-size: clamp(1.6rem, 1.2rem + 2vw, 2.4rem);
+  margin-bottom: 12px;
+}
+
+.app-texto p{
+  color: var(--muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.app-buttons{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Botón secundario estilo outline */
+.btn-outline{
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 10px 16px;
+  border-radius: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-outline:hover{
+  background: rgba(255,255,255,0.06);
+}
+
+/* Imagen lado derecho */
+.app-media img{
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto; /* empuja la imagen a la derecha */
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+/* Responsive: apila */
+@media (max-width: 900px){
+  .app-grid{
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .app-media img{
+    margin: 0 auto;
+  }
+}
+
+
+/* Colocar el acordeón en la columna derecha del grid */
+.simu-accordion-right{
+  grid-column: 2;       /* columna derecha */
+  justify-self: start;  /* no se estira */
+  margin-top: 1px;      /* separación del texto */
+}
+
+/* (opcional) asegurar filas auto en el grid */
+.simuheart-preview{
+  grid-auto-rows: auto;
+}
+
+/* En pantallas chicas, que todo vaya a una columna */
+@media (max-width: 900px){
+  .simu-accordion-right{
+    grid-column: 1;
+  }
+}
+
+/* Lista simple de patologías (no botones) */
+.pat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.pat-list li {
+  padding: .5rem .8rem;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: background .2s ease;
+}
+
+/* Hover suave si querés feedback visual */
+.pat-list li:hover {
+  background: rgba(255,255,255,0.08);
+}
+.btn {
+  text-decoration: none;
 }

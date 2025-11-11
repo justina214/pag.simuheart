@@ -14,10 +14,8 @@
       <nav class="site-nav">
         <ul>
           <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#laapp">Software</a></li>
           <li><a href="#nosotras">Nosotras</a></li>
-          <li><a href="#laapp">Aplicación</a></li>
-          <li><a href="#filtros">Buscador</a></li>
-          <li><a href="#Feedback">Feedback</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -34,7 +32,7 @@
           </div>
           <h2>Formación médica con tecnología inmersiva</h2>
           <p>Bazano &amp; Imas Navarro</p>
-          <button type="button" class="btn">Más información</button>
+          <a href="#patologias" class="btn">Más información</a>
         </div>
         <div class="hero-media">
           <img src="img/corazon.png" alt="Corazón SimuHeart">
@@ -42,64 +40,103 @@
       </div>
     </section>
 
-    <!-- NOSOTRAS -->
-    <section id="nosotras" class="section">
+    <section id="patologias" class="section">
       <div class="container">
-        <h2>Nosotras</h2>
-        <p>Somos Bazano e Imas Navarro, creadoras de SimuHeart.</p>
+
+        <!-- DESCRIPCIÓN + IMAGEN + ACORDEÓN EN EL MISMO GRID -->
+        <div class="simuheart-preview">
+          <div class="simuheart-preview-media">
+            <img src="SARMI.png" alt="Simulador SimuHeart">
+          </div>
+
+          <div class="simuheart-preview-texto">
+            <h2>SARMI®</h2>
+            <p>
+              Sarmi® es un simulador con modelo anatómico pediátrico, diseñado para reproducir ruidos cardíacos reales en un entorno controlado y educativo.
+              A través de su aplicación móvil, el usuario puede seleccionar casos clínicos específicos y controlar el simulador de forma inalámbrica, viviendo una experiencia inmersiva que une la teoría con la práctica de la semiología cardiovascular.
+            </p>
+            <p>
+              SimuHeart integra tecnología, realismo y pedagogía para formar a la próxima generación de profesionales de la salud.
+            </p>
+          </div>
+
+          <!-- Acordeón a la derecha -->
+          <details class="simu-accordion simu-accordion-right">
+            <summary>Ruidos Cardíacos</summary>
+            <ul class="pat-list">
+              <li>
+                Sano<br>
+                Estenosis Aórtica<br>
+                Estenosis Pulmonar<br>
+                Insuficiencia Mitral<br>
+                Comunicación Interauricular<br>
+                Comunicación Interventricular
+              </li>
+            </ul>
+          </details>
+        </div>
+
       </div>
     </section>
 
     <!-- LA APP -->
     <section id="laapp" class="section">
-      <div class="container">
-        <h2>Aplicación</h2>
-        <p>
-          Simula sonidos cardíacos, guía a estudiantes en la auscultación cardíaca
-          y ofrece una experiencia interactiva.
-        </p>
+      <div class="container app-grid">
 
-        <a href="https://raw.githubusercontent.com/justina214/pag.simuheart/main/app-debug.apk" 
-          class="btn btn-full" download>
-          Descargar SimuHeart!
-        </a>
+        <!-- Texto izquierda -->
+        <div class="app-texto">
+          <h2>Instalá y usá SimuHeart</h2>
+          <p>
+            Descargá la app oficial de SimuHeart y conectate al simulador para acceder a prácticas interactivas. 
+            Si necesitás ayuda, nuestro Manual de Usuario te guía paso a paso para instalar, configurar y aprovechar al máximo el sistema.
+          </p>
+
+          <div class="app-buttons">
+            <a href="https://raw.githubusercontent.com/justina214/pag.simuheart/main/app-debug.apk" 
+              class="btn btn-outline" download>
+              📦 Descargar la app
+            </a>
+
+            <a href="manual_de_usuario.pdf" class="btn btn-outline" target="_blank">
+              📘 Ver Manual de Usuario
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen derecha -->
+        <div class="app-media">
+          <img src="app.png" alt="Interfaz de la aplicación SimuHeart">
+        </div>
+
       </div>
     </section>
 
-    <!-- PATOLOGÍAS -->
-    <section id="patologias" class="section">
-      <div class="container">
-        <h2>Simulaciones de simuheart</h2>
-        <ul class="patologias-list">
-          <li><a class="btn btn-full" href="patologias/Sano.html">Sano</a></li>
-          <li><a class="btn btn-full" href="patologias/EstenosisAortica.html">Estenosis Aórtica</a></li>
-          <li><a class="btn btn-full" href="patologias/EstenosisPulmonar.html">Estenosis Pulmonar</a></li>
-          <li><a class="btn btn-full" href="patologias/InsuficienciaMitral.html">Insuficiencia Mitral</a></li>
-          <li><a class="btn btn-full" href="patologias/CIV.html">Comunicación Interventricular</a></li>
-          <li><a class="btn btn-full" href="patologias/Insuficiencia Tricuspidea.html">Comunicación Interventricular</a></li>
-          <li><a class="btn btn-full" href="patologias/Dusctus Arteriosos Persistente.html">Comunicación Interventricular</a></li>
-          <!-- agregá más ítems con sus IDs -->
-        </ul>
-      </div>
-    </section>
+    <!-- NOSOTRAS -->
+  <section id="nosotras" class="section">
+    <div class="container">
+      <h2>Nosotras</h2>
+      <p>
+        Somos Valentina Bazano y Justina Imas Navarro, estudiantes de Bioingeniería del Instituto Tecnológico de Buenos Aires. 
+        Este proyecto surge como trabajo final de carrera, con el propósito de acercar la simulación médica al aprendizaje práctico de la auscultación cardíaca.
+      </p>
+      </p>
+        Nuestra motivación principal fue diseñar una herramienta accesible que permita a estudiantes experimentar, equivocarse y aprender dentro de un entorno seguro.
+      </p>
+    </div>
+  </section>
 
-    <!-- FEEDBACK -->
-    <section id="Feedback" class="section">
-      <div class="container">
-        <h2>Feedback</h2>
-        <ul class="Feedback">
-          <li><a class="btn btn-full" href="Feedback.html">Feedback</a></li>
-        </ul>
-      </div>
-    </section>
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>
+        Lleva la enseñanza médica al siguiente nivel.
+      </p>
+      </p>
+        Para obtener más información sobre SimuHeart y sus aplicaciones educativas, comunicate con nuestro equipo a simuheart.team@gmail.com
+      </p>
+    </div>
+  </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="section">
-      <div class="container">
-        <h2>Contacto</h2>
-        <p>Email: simuheart.team@gmail.com</p>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
